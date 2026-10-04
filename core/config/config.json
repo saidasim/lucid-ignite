@@ -1,0 +1,8 @@
+{
+  "Telemetry": true,
+  "Cortana": true,
+  "OneDrive": true,
+  "HAGS": true,
+  "Search": true,
+  "Explorer": true
+}
