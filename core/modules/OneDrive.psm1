@@ -29,6 +29,19 @@ function Remove-LucidOneDrive {
         "$env:ProgramFiles\Microsoft OneDrive\OneDriveSetup.exe"
     )
 
+    # Run the uninstaller only when OneDrive is actually installed; on an already
+    # cleaned system OneDriveSetup.exe /uninstall returns an error code on every run.
+    $oneDriveExePaths = @(
+        "$env:LocalAppData\Microsoft\OneDrive\OneDrive.exe",
+        "$env:ProgramFiles\Microsoft OneDrive\OneDrive.exe",
+        "${env:ProgramFiles(x86)}\Microsoft OneDrive\OneDrive.exe"
+    )
+    $isOneDriveInstalled = @($oneDriveExePaths | Where-Object { Test-Path -Path $_ }).Count -gt 0
+    if (-not $isOneDriveInstalled) {
+        Write-LucidLog -Message "OneDrive is not installed. Skipping the uninstaller." -Level "SUCCESS"
+        $uninstallerPaths = @()
+    }
+
     $uninstallerFound = $false
     foreach ($path in $uninstallerPaths) {
         if (Test-Path -Path $path) {
@@ -48,7 +61,7 @@ function Remove-LucidOneDrive {
         }
     }
 
-    if (-not $uninstallerFound) {
+    if ($isOneDriveInstalled -and -not $uninstallerFound) {
         Write-LucidLog -Message "OneDrive official setup executable not found; proceeding with startup and residual cleanup." -Level "INFO"
     }
 
@@ -71,7 +84,11 @@ function Remove-LucidOneDrive {
         $localOneDriveDir = "$env:LocalAppData\Microsoft\OneDrive"
         if (Test-Path -Path $localOneDriveDir) {
             Remove-Item -Path $localOneDriveDir -Recurse -Force -ErrorAction SilentlyContinue
-            Write-LucidLog -Message "Cleaned up leftover OneDrive directory." -Level "SUCCESS"
+            if (Test-Path -Path $localOneDriveDir) {
+                Write-LucidLog -Message "Could not fully remove leftover OneDrive directory ($localOneDriveDir); some files may be in use." -Level "WARNING"
+            } else {
+                Write-LucidLog -Message "Cleaned up leftover OneDrive directory." -Level "SUCCESS"
+            }
         }
     } catch {
         Write-LucidLog -Message "Could not remove OneDrive leftover directory: $_" -Level "WARNING"

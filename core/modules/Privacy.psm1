@@ -47,19 +47,7 @@ function Invoke-LucidPrivacyTweaks {
                               -PropertyType "DWord" `
                               -Description "Disable Cortana"
 
-    # 3. Bing Search & Search Box Suggestions
-    $null = Set-LucidRegistry -Path "HKCU:\SOFTWARE\Policies\Microsoft\Windows\Explorer" `
-                              -Name "DisableSearchBoxSuggestions" `
-                              -Value 1 `
-                              -PropertyType "DWord" `
-                              -Description "Disable Search Box Suggestions"
-
-    $null = Set-LucidRegistry -Path "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Search" `
-                              -Name "BingSearchEnabled" `
-                              -Value 0 `
-                              -PropertyType "DWord" `
-                              -Description "Disable Bing Search in Start Menu"
-
+    # 3. Cortana consent (search box suggestions and Bing search are set in Search.psm1)
     $null = Set-LucidRegistry -Path "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Search" `
                               -Name "CortanaConsent" `
                               -Value 0 `
