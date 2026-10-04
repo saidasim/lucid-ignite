@@ -97,11 +97,12 @@ foreach ($mod in $appModules) {
 Initialize-LucidLogging -LogDirectory $logsDir -LogPrefix "LUCID_Apps" | Out-Null
 Write-LucidLog -Message "Project LUCID Application Deployer Started. Selected Language: $Language" -Level "INFO"
 
-# Check Internet Connectivity
+# Check Internet Connectivity (HTTPS to the winget source CDN; ICMP ping is often blocked)
 $hasInternet = $false
 try {
-    $ping = Test-Connection -ComputerName "8.8.8.8" -Count 1 -Quiet -ErrorAction SilentlyContinue
-    if ($ping) {
+    [Net.ServicePointManager]::SecurityProtocol = [Net.ServicePointManager]::SecurityProtocol -bor [Net.SecurityProtocolType]::Tls12
+    $response = Invoke-WebRequest -Uri "https://cdn.winget.microsoft.com/cache/source.msix" -Method Head -UseBasicParsing -TimeoutSec 15 -ErrorAction Stop
+    if ($response.StatusCode -eq 200) {
         $hasInternet = $true
         Write-LucidLog -Message "$($L.InternetOK)" -Level "SUCCESS"
     } else {
@@ -125,7 +126,7 @@ if ($hasInternet) {
         Write-LucidLog -Message "Upgrading installed Winget packages..." -Level "INFO"
         Update-LucidApplications
     } else {
-        Write-LucidLog -Message "Winget executable not found. Skipping application installation." -Level "WARNING"
+        Write-LucidLog -Message "Skipping application installation." -Level "INFO"
     }
 } else {
     Write-LucidLog -Message "$($L.AppsSkipOffline)" -Level "WARNING"
@@ -136,4 +137,8 @@ if ($hasInternet) {
 # ----------------------------------------------------------------------------
 Show-LucidSummary -Title $L.SummaryTitle -LabelCompleted $L.Completed -LabelWarnings $L.Warnings -LabelErrors $L.Errors -LabelRestart $L.RestartRec
 
-Write-Host "`r`n$($L.Finished)" -ForegroundColor Green
+if ((Get-LucidStats).Errors -gt 0) {
+    Write-Host "`r`n$($L.FinishedWithErrors)" -ForegroundColor Yellow
+} else {
+    Write-Host "`r`n$($L.Finished)" -ForegroundColor Green
+}

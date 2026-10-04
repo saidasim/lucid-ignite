@@ -9,8 +9,8 @@
     "WinVerWarn": "[WARNING] Target system build is below Windows 11 baseline.",
     "ConfigLoaded": "Configuration successfully loaded.",
     "ConfigErr": "Configuration file missing or corrupted.",
-    "InternetOK": "Internet connectivity confirmed (8.8.8.8).",
-    "InternetFail": "No internet connection detected (ping 8.8.8.8 failed).",
+    "InternetOK": "Internet connectivity confirmed (winget source reachable over HTTPS).",
+    "InternetFail": "No internet connection detected (winget source unreachable over HTTPS).",
     "SecPrivacy": "[1/5] PRIVACY & TELEMETRY TWEAKS",
     "SecSearch": "[2/5] WINDOWS SEARCH TWEAKS",
     "SecExplorer": "[3/5] EXPLORER & VISUAL PERFORMANCE",
@@ -26,6 +26,7 @@
     "Errors": "Errors",
     "RestartRec": "Recommended",
     "Finished": "All setup and configuration steps completed successfully!",
+    "FinishedWithErrors": "Finished with errors. Check the summary above and the log file in the logs folder.",
     "PressKey": "Execution finished. Press Enter to exit..."
   },
   "TR": {
@@ -38,8 +39,8 @@
     "WinVerWarn": "[UYARI] Hedef sistem surumu Windows 11 tabaninin altindadir.",
     "ConfigLoaded": "Yapilandirma dosyasi basariyla yuklendi.",
     "ConfigErr": "Yapilandirma dosyasi bulunamadi veya bozuk.",
-    "InternetOK": "Internet baglantisi dogrulandi (8.8.8.8).",
-    "InternetFail": "Internet baglantisi tespit edilemedi (ping 8.8.8.8 basarisiz).",
+    "InternetOK": "Internet baglantisi dogrulandi (winget kaynagina HTTPS ile erisildi).",
+    "InternetFail": "Internet baglantisi tespit edilemedi (winget kaynagina HTTPS ile erisilemedi).",
     "SecPrivacy": "[1/5] GIZLILIK VE TELEMETRI AYARLARI",
     "SecSearch": "[2/5] WINDOWS ARAMA AYARLARI",
     "SecExplorer": "[3/5] EXPLORER VE GORSEL PERFORMANS",
@@ -55,6 +56,7 @@
     "Errors": "Hatalar",
     "RestartRec": "Onerilir",
     "Finished": "Tum kurulum ve ayar adimlari basariyla tamamlandi!",
+    "FinishedWithErrors": "Islem hatalarla bitti. Yukaridaki ozete ve logs klasorundeki kayit dosyasina bakin.",
     "PressKey": "Islem bitti. Cikmak icin Enter'a basin..."
   }
 }

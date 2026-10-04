@@ -169,4 +169,8 @@ if ($config.OneDrive) {
 # ----------------------------------------------------------------------------
 Show-LucidSummary -Title $L.SummaryTitle -LabelCompleted $L.Completed -LabelWarnings $L.Warnings -LabelErrors $L.Errors -LabelRestart $L.RestartRec
 
-Write-Host "`r`n$($L.Finished)" -ForegroundColor Green
+if ((Get-LucidStats).Errors -gt 0) {
+    Write-Host "`r`n$($L.FinishedWithErrors)" -ForegroundColor Yellow
+} else {
+    Write-Host "`r`n$($L.Finished)" -ForegroundColor Green
+}

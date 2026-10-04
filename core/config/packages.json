@@ -1,8 +1,8 @@
 [
-  "Brave.Brave",
-  "M2Team.NanaZip",
-  "QL-Win.QuickLook",
-  "ShareX.ShareX",
-  "Spotify.Spotify",
-  "Valve.Steam"
+  { "name": "Brave",     "store": "XP8C9QZMS2PC1T", "winget": "Brave.Brave" },
+  { "name": "NanaZip",   "store": "9N8G7TSCL18R",   "winget": "M2Team.NanaZip" },
+  { "name": "QuickLook", "store": "9NV4BS3L1H4S",   "winget": "QL-Win.QuickLook" },
+  { "name": "ShareX",    "store": "9NBLGGH4Z1SP",   "winget": "ShareX.ShareX" },
+  { "name": "Spotify",   "store": "9NCBCSZSJRSB",   "winget": "Spotify.Spotify" },
+  { "name": "Steam",     "store": null,             "winget": "Valve.Steam" }
 ]
