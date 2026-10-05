@@ -1,6 +1,6 @@
 @echo off
 setlocal enabledelayedexpansion
-title Project LUCID - Autorun Engine
+title LUCID Ignite - Autorun Engine
 
 cd /d "%~dp0"
 
@@ -19,16 +19,14 @@ echo              (  )  (  )(  )/ __)(_  _)(  _ \(  _  )/ __)
 echo               )(__  )(__)(( (__  _)(_  )(_) ))(_)( \__ \
 echo              (____)(______)\___)(____)(____/(_____)(___/                          
 echo ============================================================================
-echo                Project LUCID - First Run v1.0 Engine                       
+echo                LUCID Ignite v1.0 Engine                       
 echo ============================================================================
 echo.
 
-if exist "%~dp0core\LUCID_First_Run.ps1" (
-    powershell.exe -NoProfile -ExecutionPolicy Bypass -File "%~dp0core\LUCID_First_Run.ps1"
-) else if exist "%~dp0LUCID-FirstRun\core\LUCID_First_Run.ps1" (
-    powershell.exe -NoProfile -ExecutionPolicy Bypass -File "%~dp0LUCID-FirstRun\core\LUCID_First_Run.ps1"
+if exist "%~dp0core\LUCID_Ignite_System.ps1" (
+    powershell.exe -NoProfile -ExecutionPolicy Bypass -File "%~dp0core\LUCID_Ignite_System.ps1"
 ) else (
-    echo [ERROR] LUCID_First_Run.ps1 not found!
+    echo [ERROR] LUCID_Ignite_System.ps1 not found!
     echo.
     pause
     exit /b 1

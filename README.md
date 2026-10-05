@@ -1,4 +1,4 @@
-# Project LUCID – First Run v1.0
+# LUCID Ignite v1.0
 
 Post-installation setup tool for a custom Windows 11 (24H2 / 25H2) ISO. Run it once after a clean install: one launcher applies the system tweaks, the other installs and updates the apps.
 
@@ -6,9 +6,9 @@ Post-installation setup tool for a custom Windows 11 (24H2 / 25H2) ISO. Run it o
 
 Both launchers request administrator rights (UAC) on their own.
 
-1. **`Autorun.bat`** runs `core/LUCID_First_Run.ps1` (system tweaks only):
+1. **`Autorun.bat`** runs `core/LUCID_Ignite_System.ps1` (system tweaks only):
    privacy and telemetry policies, Cortana, Windows Search, Explorer and visual performance, Hardware-Accelerated GPU Scheduling (HAGS), OneDrive removal.
-2. **`Apps.bat`** runs `core/LUCID_Apps_Run.ps1` (applications only):
+2. **`Apps.bat`** runs `core/LUCID_Ignite_Apps.ps1` (applications only):
    installs the apps in `core/config/packages.json`, then runs `winget upgrade --all`.
 
 ## App install policy
@@ -30,12 +30,12 @@ If winget is missing on a fresh install, the tool first requests the App Install
 ## Structure
 
 ```text
-LUCID-FirstRun/
+lucid-ignite/
 ├── Autorun.bat            launcher: system tweaks
 ├── Apps.bat               launcher: apps
 ├── core/
-│   ├── LUCID_First_Run.ps1
-│   ├── LUCID_Apps_Run.ps1
+│   ├── LUCID_Ignite_System.ps1
+│   ├── LUCID_Ignite_Apps.ps1
 │   ├── config/            config.json (tweak switches), packages.json, lang.json (EN/TR)
 │   └── modules/           one PowerShell module per area
 └── logs/                  run logs (created on first run, not tracked in git)

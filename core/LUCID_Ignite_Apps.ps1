@@ -1,5 +1,5 @@
 # ============================================================================
-# Project LUCID - Application Deployer Engine
+# LUCID Ignite - Application Deployer Engine
 # Windows 11 24H2 / 25H2 Post-Installation Application Tool
 # ============================================================================
 
@@ -36,7 +36,7 @@ if (-not $Language -or ($Language -ne "EN" -and $Language -ne "TR")) {
     Write-Host "              )(__  )(__)(( (__  _)(_  )(_) ))(_)( \__ \" -ForegroundColor Cyan
     Write-Host "             (____)(______)\___)(____)(____/(_____)(___/" -ForegroundColor Cyan
     Write-Host "============================================================================" -ForegroundColor Cyan
-    Write-Host "                Project LUCID - Application Deployer Engine                 " -ForegroundColor White
+    Write-Host "                LUCID Ignite - Application Deployer Engine                 " -ForegroundColor White
     Write-Host "============================================================================" -ForegroundColor Cyan
     Write-Host ""
     Write-Host " Select Language / Dil Seciniz:" -ForegroundColor Yellow
@@ -95,7 +95,7 @@ foreach ($mod in $appModules) {
 
 # Initialize Logging with LUCID_Apps Prefix
 Initialize-LucidLogging -LogDirectory $logsDir -LogPrefix "LUCID_Apps" | Out-Null
-Write-LucidLog -Message "Project LUCID Application Deployer Started. Selected Language: $Language" -Level "INFO"
+Write-LucidLog -Message "LUCID Ignite Application Deployer Started. Selected Language: $Language" -Level "INFO"
 
 # Check Internet Connectivity (HTTPS to the winget source CDN; ICMP ping is often blocked)
 $hasInternet = $false

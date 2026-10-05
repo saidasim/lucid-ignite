@@ -1,11 +1,11 @@
 {
   "EN": {
-    "HeaderTitle": "Project LUCID - First Run v1.0 Engine",
+    "HeaderTitle": "LUCID Ignite v1.0 Engine",
     "SelectLangPrompt": "Select Language / Dil Seciniz:",
     "Option1": "1. English (EN) [Default]",
     "Option2": "2. Turkce (TR)",
     "ChoicePrompt": "Your choice / Seciminiz [1/2] (Default: 1): ",
-    "AdminReq": "[ERROR] Project LUCID requires Administrator privileges!",
+    "AdminReq": "[ERROR] LUCID Ignite requires Administrator privileges!",
     "WinVerWarn": "[WARNING] Target system build is below Windows 11 baseline.",
     "ConfigLoaded": "Configuration successfully loaded.",
     "ConfigErr": "Configuration file missing or corrupted.",
@@ -30,12 +30,12 @@
     "PressKey": "Execution finished. Press Enter to exit..."
   },
   "TR": {
-    "HeaderTitle": "Project LUCID - First Run v1.0 Motoru",
+    "HeaderTitle": "LUCID Ignite v1.0 Motoru",
     "SelectLangPrompt": "Dil Seciniz / Select Language:",
     "Option1": "1. English (EN) [Varsayilan]",
     "Option2": "2. Turkce (TR)",
     "ChoicePrompt": "Seciminiz / Your choice [1/2] (Varsayilan: 1): ",
-    "AdminReq": "[HATA] Project LUCID calistirmak icin Yonetici Haklari gereklidir!",
+    "AdminReq": "[HATA] LUCID Ignite calistirmak icin Yonetici Haklari gereklidir!",
     "WinVerWarn": "[UYARI] Hedef sistem surumu Windows 11 tabaninin altindadir.",
     "ConfigLoaded": "Yapilandirma dosyasi basariyla yuklendi.",
     "ConfigErr": "Yapilandirma dosyasi bulunamadi veya bozuk.",

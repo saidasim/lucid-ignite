@@ -1,5 +1,5 @@
 # ============================================================================
-# Project LUCID - First Run v1.0
+# LUCID Ignite v1.0
 # Module: Logging.psm1
 # ============================================================================
 
@@ -33,7 +33,7 @@ function Initialize-LucidLogging {
     $script:ErrorCount = 0
 
     $headerText = "============================================================================`r`n" +
-                  " Project LUCID - Execution Log ($LogPrefix)`r`n" +
+                  " LUCID Ignite - Execution Log ($LogPrefix)`r`n" +
                   " Started: $(Get-Date -Format 'yyyy-MM-dd HH:mm:ss')`r`n" +
                   " OS: $([System.Environment]::OSVersion.VersionString)`r`n" +
                   "============================================================================`r`n"

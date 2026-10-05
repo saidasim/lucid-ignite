@@ -1,5 +1,5 @@
 # ============================================================================
-# Project LUCID - First Run v1.0 System Tweaks Engine
+# LUCID Ignite v1.0 System Tweaks Engine
 # Windows 11 24H2 / 25H2 Post-Installation System Setup Tool
 # ============================================================================
 
@@ -36,7 +36,7 @@ if (-not $Language -or ($Language -ne "EN" -and $Language -ne "TR")) {
     Write-Host "              )(__  )(__)(( (__  _)(_  )(_) ))(_)( \__ \" -ForegroundColor Cyan
     Write-Host "             (____)(______)\___)(____)(____/(_____)(___/" -ForegroundColor Cyan
     Write-Host "============================================================================" -ForegroundColor Cyan
-    Write-Host "                Project LUCID - First Run v1.0 Engine                       " -ForegroundColor White
+    Write-Host "                LUCID Ignite v1.0 Engine                       " -ForegroundColor White
     Write-Host "============================================================================" -ForegroundColor Cyan
     Write-Host ""
     Write-Host " Select Language / Dil Seciniz:" -ForegroundColor Yellow
@@ -105,7 +105,7 @@ foreach ($mod in $systemModules) {
 
 # Initialize Logging with LUCID_System Prefix
 Initialize-LucidLogging -LogDirectory $logsDir -LogPrefix "LUCID_System" | Out-Null
-Write-LucidLog -Message "Project LUCID System Tweaks Engine Started. Selected Language: $Language" -Level "INFO"
+Write-LucidLog -Message "LUCID Ignite System Tweaks Engine Started. Selected Language: $Language" -Level "INFO"
 
 # Load Configuration
 if (-not (Test-Path -Path $configPath)) {

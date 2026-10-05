@@ -1,5 +1,5 @@
 # ============================================================================
-# Project LUCID - First Run v1.0
+# LUCID Ignite v1.0
 # Module: Apps.psm1
 # ============================================================================
 # Install policy: Microsoft Store first (exact Store ID). If the app is not on
